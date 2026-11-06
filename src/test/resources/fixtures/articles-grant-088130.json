@@ -1,0 +1,197 @@
+{
+  "version": "6.9",
+  "hitCount": 337,
+  "request": {
+    "queryString": "GRANT_ID:\"088130\"",
+    "resultType": "core",
+    "cursorMark": "*",
+    "pageSize": 2,
+    "sort": "",
+    "synonym": false
+  },
+  "resultList": {
+    "result": [
+      {
+        "id": "34113717",
+        "source": "MED",
+        "pmid": "34113717",
+        "pmcid": "PMC7610949",
+        "doi": "10.5334/cpsy.70",
+        "title": "Why Depressed Mood is Adaptive: A Numerical Proof of Principle for an Evolutionary Systems Theory of Depression.",
+        "authorString": "Constant A, Hesp C, Davey CG, Friston KJ, Badcock PB.",
+        "journalInfo": {
+          "issue": "1",
+          "volume": "5",
+          "journalIssueId": 3185983,
+          "dateOfPublication": "2021 ",
+          "monthOfPublication": 0,
+          "yearOfPublication": 2021,
+          "journal": {
+            "medlineAbbreviation": "Comput Psychiatr",
+            "title": "Computational psychiatry (Cambridge, Mass.)",
+            "essn": "2379-6227",
+            "issn": "2379-6227",
+            "isoabbreviation": "Comput Psychiatr",
+            "nlmid": "101719151"
+          },
+          "printPublicationDate": "2021-01-01"
+        },
+        "pubYear": "2021",
+        "pageInfo": "60-80",
+        "publicationStatus": "ppublish",
+        "language": "eng",
+        "pubModel": "Print-Electronic",
+        "grantsList": {
+          "grant": [
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT_",
+              "grantId": "088130",
+              "orderIn": 0
+            },
+            {
+              "agency": "Wellcome Trust",
+              "grantId": "088130/Z/09/Z",
+              "orderIn": 0
+            },
+            {
+              "agency": "Dutch Research Council (NWO)",
+              "grantId": "406.18.535",
+              "orderIn": 0
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "citedByCount": 17,
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "hasLabsLinks": "Y",
+        "hasData": "Y",
+        "license": "cc by",
+        "authMan": "Y",
+        "epmcAuthMan": "Y",
+        "nihAuthMan": "N",
+        "manuscriptId": "EMS126881",
+        "hasTMAccessionNumbers": "Y",
+        "tmAccessionTypeList": {
+          "accessionType": [
+            "doi"
+          ]
+        },
+        "dateOfCreation": "2021-06-11",
+        "dateOfRevision": "2025-05-30",
+        "electronicPublicationDate": "2021-06-02",
+        "firstPublicationDate": "2021-06-02",
+        "firstIndexDate": "2021-06-12",
+        "fullTextReceivedDate": "2025-02-05",
+        "hasEvaluations": "N"
+      },
+      {
+        "id": "PPR220327",
+        "source": "PPR",
+        "doi": "10.12688/wellcomeopenres.16253.2",
+        "title": "Effective immunity and second waves: a dynamic causal modelling study",
+        "authorString": "Friston KJ, Parr T, Zeidman P, Razi A, Flandin G, Daunizeau J, Hulme OJ, Billig AJ, Litvak V, Price CJ, Moran RJ, Costello A, Pillay D, Lambert C.",
+        "pubYear": "2020",
+        "bookOrReportDetails": {
+          "publisher": "Wellcome Open Res",
+          "yearOfPublication": 2020
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT",
+              "grantId": "203147",
+              "orderIn": 0
+            },
+            {
+              "agency": "Australian Research Council",
+              "grantId": "DE170100128",
+              "orderIn": 0
+            },
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT",
+              "grantId": "088130",
+              "orderIn": 0
+            },
+            {
+              "agency": "Medical Research Council",
+              "acronym": "MRC_",
+              "grantId": "MR/R006504/1",
+              "orderIn": 0
+            },
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT",
+              "grantId": "WT091681MA",
+              "orderIn": 0
+            },
+            {
+              "agency": "Australian Research Council",
+              "grantId": "DP200100757",
+              "orderIn": 0
+            }
+          ]
+        },
+        "isOpenAccess": "N",
+        "inEPMC": "N",
+        "inPMC": "N",
+        "citedByCount": 0,
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasPDF": "N",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "hasLabsLinks": "N",
+        "hasData": "N",
+        "license": "cc by",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCreation": "2020-10-01",
+        "firstPublicationDate": "2020-09-30",
+        "firstIndexDate": "2020-10-02",
+        "versionList": {
+          "version": [
+            {
+              "id": "PPR208188",
+              "source": "PPR",
+              "versionNumber": 1,
+              "firstPublishDate": "2020-09-01",
+              "pubTypeList": {
+                "pubType": [
+                  "preprint"
+                ]
+              },
+              "hasEvaluations": "Y"
+            },
+            {
+              "id": "PPR220327",
+              "source": "PPR",
+              "versionNumber": 2,
+              "firstPublishDate": "2020-09-30",
+              "pubTypeList": {
+                "pubType": [
+                  "preprint"
+                ]
+              },
+              "hasEvaluations": "Y"
+            }
+          ]
+        },
+        "versionNumber": 2,
+        "hasEvaluations": "Y"
+      }
+    ]
+  }
+}

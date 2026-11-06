@@ -1,0 +1,38 @@
+{
+  "Request": {
+    "Query": "aff:\"University of Cambridge\"",
+    "ResultType": "core",
+    "Page": 1
+  },
+  "HitCount": 3127,
+  "RecordList": {
+    "Record": [
+      {
+        "Person": { "FamilyName": "Smith", "GivenName": "Jane", "Initials": "J" },
+        "Grant": {
+          "Funder": { "Name": "Wellcome Trust" },
+          "Id": "088130",
+          "Title": "Neural mechanisms of decision making",
+          "Type": "Programme Grant",
+          "StartDate": "2009-10-01"
+        },
+        "Institution": { "Name": "University of Cambridge", "Department": "Department of Psychology" }
+      },
+      {
+        "Person": { "FamilyName": "Jones", "GivenName": "Ali" },
+        "Grant": {
+          "Funder": { "Name": "Medical Research Council" },
+          "Id": "MR/R006504/1",
+          "Title": "A grant title"
+        },
+        "Institution": { "Name": "Cambridge University Hospitals NHS Foundation Trust" }
+      },
+      {
+        "Person": { "FamilyName": "Missing" },
+        "Grant": {
+          "Title": "Grant record without ID or funder"
+        }
+      }
+    ]
+  }
+}

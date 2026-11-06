@@ -1,0 +1,13 @@
+{
+  "HitCount": "1",
+  "RecordList": {
+    "Record": {
+      "Grant": {
+        "Funder": [{ "Name": "Wellcome Trust" }],
+        "Id": "203147",
+        "Title": { "$": "Title carried as XML text content" }
+      },
+      "Institution": { "Name": "University of Manchester" }
+    }
+  }
+}
