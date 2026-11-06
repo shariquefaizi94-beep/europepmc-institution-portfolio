@@ -14,11 +14,7 @@ import com.example.portfolio.europepmc.UpstreamException;
 
 import jakarta.validation.ConstraintViolationException;
 
-/**
- * Maps errors to RFC 9457 problem+json responses:
- * 400 for invalid input, 502 when Europe PMC fails or returns something unusable,
- * 504 when it times out.
- */
+// 400 bad input, 502 upstream error/bad response, 504 upstream timeout (problem+json).
 @RestControllerAdvice
 public class ApiExceptionHandler {
 

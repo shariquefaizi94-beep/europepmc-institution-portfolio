@@ -10,12 +10,7 @@ import com.example.portfolio.config.PortfolioProperties;
 import com.example.portfolio.europepmc.ArticleRecord.FundingReference;
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * Client for the Europe PMC Articles REST API {@code /search} endpoint.
- *
- * <p>Uses {@code resultType=core} because only the core view includes each article's
- * {@code grantsList}, which is needed to check which funder the grant ID belongs to.
- */
+// resultType=core because only the core view has grantsList, which we need for funder checks.
 @Component
 public class EuropePmcArticlesClient implements ArticlesClient {
 

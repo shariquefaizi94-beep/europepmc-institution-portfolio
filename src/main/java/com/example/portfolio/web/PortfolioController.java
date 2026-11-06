@@ -29,9 +29,6 @@ public class PortfolioController {
         this.service = service;
     }
 
-    /**
-     * Example: {@code GET /institution-portfolio?institution=University%20of%20Cambridge&limit=5&publicationsPerGrant=3}
-     */
     @GetMapping(value = "/institution-portfolio", produces = "application/json")
     public PortfolioResponse portfolio(
             @RequestParam

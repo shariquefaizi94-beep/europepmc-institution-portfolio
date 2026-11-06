@@ -36,16 +36,9 @@ import com.example.portfolio.model.PortfolioResponse.PublicationLookup;
 import com.example.portfolio.model.PortfolioResponse.RequestEcho;
 import com.example.portfolio.model.PortfolioResponse.Summary;
 
-/**
- * Builds a portfolio in two phases:
- * <ol>
- *   <li>one Grist call to find grants for the institution (a failure here fails the request);</li>
- *   <li>one Articles API call per grant, run concurrently on a bounded shared pool. Each lookup
- *       fails on its own: a failure is recorded on that grant and the others are unaffected.</li>
- * </ol>
- * Results are collected by position, so the output keeps Grist order whatever order the lookups
- * finish in.
- */
+// 1 Grist call (failure = whole request fails), then 1 Articles call per grant on the shared
+// bounded pool. Lookups fail independently. Results are collected by index, so Grist order holds
+// regardless of which lookup finishes first.
 @Service
 public class PortfolioService {
 
@@ -72,9 +65,6 @@ public class PortfolioService {
         this.props = props;
     }
 
-    /**
-     * @throws UpstreamException if the grant search itself fails
-     */
     public PortfolioResponse build(String institution, int limit, int publicationsPerGrant) {
         String grantsQuery = QuerySyntax.affiliationQuery(institution);
         GrantSearchResult search = grantsClient.search(grantsQuery);
@@ -115,7 +105,7 @@ public class PortfolioService {
         return CompletableFuture.supplyAsync(() -> lookup(grant, perGrant, requested), lookupExecutor);
     }
 
-    /** Runs on a pool thread. Never throws: every failure becomes a LOOKUP_FAILED entry. */
+    // runs on a pool thread; never throws - failures become LOOKUP_FAILED
     private GrantEntry lookup(GrantRecord grant, int perGrant, String requested) {
         String query = QuerySyntax.grantIdQuery(grant.id());
         try {
@@ -133,11 +123,9 @@ public class PortfolioService {
         }
     }
 
-    /**
-     * Waits for each future in grant order against one shared deadline. A lookup still queued or
-     * running when the deadline passes is cancelled and reported as failed; a cancelled task that
-     * has not started yet is never run, so an abandoned request does not keep calling Europe PMC.
-     */
+    // One deadline for the whole batch. Anything not done by then is cancelled + marked failed.
+    // Cancelling a CompletableFuture that hasn't started means it never runs, so we don't keep
+    // hitting Europe PMC for a request we've already answered.
     private List<GrantEntry> collectInOrder(List<GrantRecord> grants, List<CompletableFuture<GrantEntry>> futures,
                                             String requested) {
         long deadline = System.nanoTime() + props.lookupDeadline().toNanos();

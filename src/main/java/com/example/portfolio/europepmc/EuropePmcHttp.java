@@ -13,10 +13,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * Performs one GET against a Europe PMC endpoint and turns every failure mode into an
- * {@link UpstreamException}, so callers only have to handle a single exception type.
- */
+// Every failure mode ends up as UpstreamException so callers only handle one type.
 @Component
 public class EuropePmcHttp {
 
@@ -31,7 +28,7 @@ public class EuropePmcHttp {
     JsonNode getJson(URI uri, String upstream) {
         String body;
         try {
-            // Read as text and parse ourselves: we do not rely on the upstream Content-Type.
+            // parse ourselves rather than trusting the upstream Content-Type
             body = restClient.get().uri(uri).retrieve().body(String.class);
         } catch (RestClientResponseException e) {
             throw new UpstreamException(upstream,

@@ -10,14 +10,8 @@ import org.springframework.web.util.UriUtils;
 import com.example.portfolio.config.PortfolioProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * Client for the Europe PMC Grants RESTful (Grist) API.
- *
- * <p>Grist takes its parameters in the path rather than a query string:
- * {@code /get/query=<q>&resultType=core&format=json}. The query is percent-encoded as a whole
- * (including spaces, quotes, {@code &}, {@code /} and {@code =}) so user text cannot break out of
- * the {@code query=} parameter.
- */
+// Grist takes params in the path: /get/query=<q>&resultType=core&format=json
+// so the query is fully percent-encoded (incl. & / =) to keep user text inside query=.
 @Component
 public class GristGrantsClient implements GrantsClient {
 

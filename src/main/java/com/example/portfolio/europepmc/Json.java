@@ -5,16 +5,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-/** Small null-tolerant helpers for reading loosely-structured upstream JSON. */
+// Null-tolerant helpers for the loosely structured (XML-converted) upstream JSON.
 final class Json {
 
     private Json() {
     }
 
-    /**
-     * Text at the given path, or {@code null} if any step is missing, null or blank. If a step is
-     * an array, its first element is used (repeated XML elements become arrays in the JSON).
-     */
+    // null if anything on the path is missing/blank; arrays -> first element
     static String text(JsonNode node, String... path) {
         JsonNode current = node;
         for (String key : path) {
@@ -57,10 +54,7 @@ final class Json {
         return null;
     }
 
-    /**
-     * XML-to-JSON converted APIs return a single object instead of a one-element array when there
-     * is exactly one item. Normalise both shapes (and absence) to a list.
-     */
+    // XML->JSON gives a bare object instead of a 1-element array when there's one item.
     static List<JsonNode> list(JsonNode node) {
         List<JsonNode> out = new ArrayList<>();
         if (node == null || node.isNull() || node.isMissingNode()) {

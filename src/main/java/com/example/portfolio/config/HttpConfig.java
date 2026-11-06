@@ -12,11 +12,7 @@ import org.springframework.web.client.RestClient;
 @Configuration
 public class HttpConfig {
 
-    /**
-     * One RestClient shared by both Europe PMC clients. {@link SimpleClientHttpRequestFactory}
-     * (HttpURLConnection) is used because it honours the standard JVM proxy properties and gives
-     * simple, explicit connect/read timeouts.
-     */
+    // HttpURLConnection-based factory: simple timeouts and it respects the JVM proxy settings.
     @Bean
     RestClient europePmcRestClient(RestClient.Builder builder, PortfolioProperties props) {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
@@ -29,11 +25,8 @@ public class HttpConfig {
                 .build();
     }
 
-    /**
-     * Fixed-size pool for publication lookups. Because it is a singleton, the bound applies to
-     * the whole service: two concurrent portfolio requests share the same N slots, so Europe PMC
-     * never sees more than N simultaneous Articles API calls from this instance.
-     */
+    // Singleton pool, so the limit is service-wide: concurrent requests share the same N slots
+    // and Europe PMC never sees more than N parallel article lookups from one instance.
     @Bean(destroyMethod = "shutdownNow")
     ExecutorService publicationLookupExecutor(PortfolioProperties props) {
         AtomicInteger counter = new AtomicInteger();

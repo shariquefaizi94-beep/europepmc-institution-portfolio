@@ -2,11 +2,6 @@ package com.example.portfolio.europepmc;
 
 import java.util.List;
 
-/**
- * One publication from the Articles API ({@code resultType=core}).
- *
- * @param fundingReferences the article's own grantsList, used to check the grant/funder pairing
- */
 public record ArticleRecord(
         String source,
         String id,
